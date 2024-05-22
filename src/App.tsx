@@ -6,9 +6,8 @@ function App() {
 
   return (
     <div className="App">
-      <Todolist/>
-      <Todolist/>
-      <Todolist/>
+      <Todolist title={"What to learn"}/>
+      <Todolist title={"What to do"}/>
     </div>
   );
 }
