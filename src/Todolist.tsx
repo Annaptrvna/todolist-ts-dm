@@ -5,7 +5,7 @@ type TodolistPropsType = {
     tasks: Array<TaskPropsType>
 }
 
-type TaskPropsType = {
+export type TaskPropsType = {
     id: number,
     title: string,
     isDone: boolean
@@ -20,15 +20,15 @@ export const Todolist = (props:TodolistPropsType) => {
             <ul>
                 <li>
                     <input type="checkbox"/>
-                    <span>HTML</span>
+                    <span>{props.tasks[0].title}</span>
                 </li>
                 <li>
                     <input type="checkbox"/>
-                    <span>CSS</span>
+                    <span>{props.tasks[1].title}</span>
                 </li>
                 <li>
                     <input type="checkbox"/>
-                    <span>JS</span>
+                    <span>{props.tasks[2].title}</span>
                 </li>
                 <div>
                     <button>All</button>
