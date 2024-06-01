@@ -32,9 +32,21 @@ function App() {
         let filteredTasks = tasks.filter((task) => task.id !== id)
         setTasks(filteredTasks)
     }
+
+    const addTask = (title: string) => {
+        const newTask = {id: v4(), title: title, isDone: false}
+        title ? setTasks([...tasks, newTask])
+            : alert("Title should not be empty!")
+    }
   return (
     <div className="App">
-      <Todolist title={"What to learn"} changeFilterValue = {changeFilterValue} tasks={tasksForTodolist} removeTask={removeTask}/>
+      <Todolist
+          title={"What to learn"}
+          changeFilterValue = {changeFilterValue}
+          tasks={tasksForTodolist}
+          removeTask={removeTask}
+          addTask={addTask}
+      />
     </div>
   );
 }
