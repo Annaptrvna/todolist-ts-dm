@@ -19,7 +19,7 @@ export type TaskPropsType = {
 export const Todolist = (props:TodolistPropsType) => {
 
     const [taskTitle, setTaskTitle] = useState("")
-    const onClickHandler = (id: string) => {
+    const onClickDeleteHandler = (id: string) => {
         props.removeTask(id)
     }
     const onChangeTitleHandler = (title: string) => {
@@ -53,7 +53,7 @@ export const Todolist = (props:TodolistPropsType) => {
                         <li key={task.id}>
                             <input type="checkbox" checked={task.isDone}/>
                             <span>{task.title}</span>
-                            <button onClick={()=>onClickHandler(task.id)}>Delete</button>
+                            <button onClick={()=>onClickDeleteHandler(task.id)}>Delete</button>
                         </li>
                     )
                 })}
