@@ -4,17 +4,17 @@ import {filterValue} from "./App";
 type TodolistPropsType = {
     title: string
     tasks: Array<TaskPropsType>
-    removeTask: (id: number)=> void
+    removeTask: (id: string)=> void
     changeFilterValue: (value: filterValue) => void
 }
 
 export type TaskPropsType = {
-    id: number,
+    id: string,
     title: string,
     isDone: boolean
 }
 export const Todolist = (props:TodolistPropsType) => {
-    const onClickHandler = (id: number) => {
+    const onClickHandler = (id: string) => {
         props.removeTask(id)
     }
 
