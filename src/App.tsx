@@ -39,6 +39,12 @@ function App() {
             : alert("Title should not be empty!")
     }
 
+    const changeStatus = (id: string, isDone: boolean) => {
+        const task = tasks.find(t=> t.id === id)
+        if(task){task.isDone = isDone};
+        setTasks([...tasks])
+    }
+
 
   return (
     <div className="App">
@@ -48,6 +54,8 @@ function App() {
           tasks={tasksForTodolist}
           removeTask={removeTask}
           addTask={addTask}
+          changeStatus={changeStatus}
+          filter={filter}
       />
     </div>
   );
