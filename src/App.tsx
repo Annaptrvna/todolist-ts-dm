@@ -38,6 +38,8 @@ function App() {
         title ? setTasks([...tasks, newTask])
             : alert("Title should not be empty!")
     }
+
+
   return (
     <div className="App">
       <Todolist
