@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {FilterValueType} from "./App";
-import {AddItemForm} from "./AddItemForm";
 
 type TodolistPropsType = {
     title: string
@@ -22,7 +21,7 @@ export type TaskPropsType = {
 }
 
 
-export const Todolist: React.FC<TodolistPropsType> = (props) => {
+export const Todolist5: React.FC<TodolistPropsType> = (props) => {
     const {
         title,
         tasks,
@@ -67,23 +66,15 @@ export const Todolist: React.FC<TodolistPropsType> = (props) => {
    return (<div>
             <h3>{title}</h3>
             <button onClick={onClickRemoveTodolistHandler}>Delete Todolist</button>
-            {/*<div>*/}
-            {/*    <input*/}
-            {/*        className={error? "error" : ""}*/}
-            {/*        onChange={(e)=>onChangeTitleHandler(e.currentTarget.value)}*/}
-            {/*        value={taskTitle}*/}
-            {/*        onKeyDown={(e)=>onKeyDownHandler(e.code)}/>*/}
-            {/*    <button onClick={onClickAddTaskHandler}>+</button>*/}
-            {/*    {error && <div className={"error-message"}>{error}</div>}*/}
-            {/*</div>*/}
-       <AddItemForm onClick={onClickAddTaskHandler}
-                    onChange={onChangeTitleHandler}
-                    onKeyDown={onKeyDownHandler}
-                    className={error? "error": ""}
-                    classErrorMessage={error? "error-message" : ""}
-                    errorMessage={error}
-                    curInputValue={taskTitle}
-       />
+            <div>
+                <input
+                    className={error? "error" : ""}
+                    onChange={(e)=>onChangeTitleHandler(e.currentTarget.value)}
+                    value={taskTitle}
+                    onKeyDown={(e)=>onKeyDownHandler(e.code)}/>
+                <button onClick={onClickAddTaskHandler}>+</button>
+                {error && <div className={"error-message"}>{error}</div>}
+            </div>
             <ul>
                 {tasks.map((task) => {
                     return (
@@ -102,6 +93,3 @@ export const Todolist: React.FC<TodolistPropsType> = (props) => {
                 </div>
         </div>)
 }
-
-
-
